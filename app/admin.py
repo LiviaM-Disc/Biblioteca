@@ -7,5 +7,7 @@ admin.site.register(Editora)
 admin.site.register(Leitor)
 admin.site.register(Livro)
 admin.site.register(Genero)
+admin.site.register(Emprestimo)
+
 
 # Register your models here.

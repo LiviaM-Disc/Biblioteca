@@ -99,29 +99,37 @@
     <!-- Container principal da página (Bootstrap centraliza e organiza o conteúdo) -->
     <div class="container mt-5">
 
-        <h2 class="mb-4">Tabela de Autores</h2>
-        
+        <h2 class="mb-4">Tabela de Reservas</h2>
+    
         <table class="table">
-        <thead>
-        <tr>
-        <th>Nome</th>
-        <th>Cidade</th>
-        </tr>
-        </thead>
-        
-        <tbody>
-        
-        {% for autor in autores %}
-        <tr>
-        <td>{{ autor.nome }}</td>
-        <td>{{ autor.cidade }}</td>
-        </tr>
-        {% endfor %}
-        
-        </tbody>
+    
+            <thead>
+                <tr>
+                    <th>Livro</th>
+                    <th>Leitor</th>
+                    <th>Data Empréstimo</th>
+                    <th>Data Devolução</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+    
+            {% for reserva in reservas %}
+    
+                <tr>
+                    <td>{{ reserva.livro }}</td>
+                    <td>{{ reserva.leitor }}</td>
+                    <td>{{ reserva.data_emprestimo }}</td>
+                    <td>{{ reserva.data_devolucao }}</td>
+                </tr>
+    
+            {% endfor %}
+    
+            </tbody>
+    
         </table>
-        
-        </div>
+    
+    </div>
 
 
     <!-- Importa jQuery (necessário para algumas funções do Bootstrap 4) -->

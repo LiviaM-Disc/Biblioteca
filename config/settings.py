@@ -121,4 +121,4 @@ STATICFILES_DIRS = [
 ]
 
 # DEFAULT_AUTO_FIELD: Define como o Django vai criar os números de "IDs" (chaves primárias) das suas tabelas de banco de dados automaticamente.
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'  
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

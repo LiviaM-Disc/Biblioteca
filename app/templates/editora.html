@@ -1,106 +1,139 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,
-initial-scale=1.0">
-<title>Página Inicial</title>
-<!-- Incluindo Bootstrap CSS-->
-<link
-rel="stylesheet"
-href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css
-/bootstrap.min.css">
+
+    <!-- Define o padrão de caracteres (acentos, ç, etc.) -->
+    <meta charset="UTF-8">
+
+    <!-- Configura o layout responsivo para funcionar em celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título da página que aparece na aba do navegador -->
+    <title>Página Inicial</title>
+
+    <!-- Importa o CSS do Bootstrap para estilizar a página -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
 </head>
+
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark
-bg-success">
-<a class="navbar-brand" href="/">Biblioteca</a>
-<button class="navbar-toggler" type="button"
-data-toggle="collapse"
-data-target="#navbarNav"
-aria-controls="navbarNav"
-aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse"
-id="navbarNav">
-<ul class="navbar-nav">
-<li class="nav-item">
-<a class="nav-link text-dark"
-href="/">Home</a>
-</li>
-<li class="nav-item">
-<a class="nav-link text-dark"
-href="/livros/">Livros</a>
-</li>
-<li class="nav-item">
-<a class="nav-link text-dark"
-href="/reserva/">Reserva</a>
-</li>
-<li class="nav-item">
-<a class="nav-link text-dark"
-href="/cidade/">Cidade</a>
-</li>
-<li class="nav-item">
-<a class="nav-link text-dark"
-href="/autor/">Autor</a>
-</li>
-<li class="nav-item">
-<a class="nav-link text-dark"
-href="/editor/">Editora</a>
-</li>
-<li class="nav-item">
-<a class="nav-link text-dark"
-href="/genero/">Genero</a>
-</li>
-<li class="nav-item">
-<a class="nav-link text-dark"
-href="/leitor/">Leitor</a>
-</li>
-<li class="nav-item">
-<a class="nav-link text-dark"
-href="/admin/">Administração</a>
-</li>
-</ul>
-</div>
-</nav>
-<div class="container mt-5">
-<h2 class="mb-4">Tabela de Livros</h2>
-<table class="table">
-<thead>
-<tr>
-<th scope="col">Nome</th>
-<th scope="col">Autor</th>
-<th scope="col">Editora</th>
-<th scope="col">Gênero</th>
-<th scope="col">Preço</th>
-<th scope="col">Data Publicação</th>
-<th scope="col">Status</th>
-</tr>
-</thead>
-<tbody>
-{% for livros in livros %}
-<tr>
-<td>{{ livros.nome }}</td>
-<td>{{ livros.autor }}</td>
-<td>{{ livros.editora }}</td>
-<td>{{ livros.genero }} </td>
-<td>{{ livros.preco }}</td>
-<td>{{ livros.data_plub }}</td>
-<td>{{ livros.status }}</td>
-</tr>
-{% endfor %}
-</tbody>
-</table>
-</div>
-<!-- Incluindo jQuery e Bootstrap JS-->
-<script
-src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script
-src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/di
-st/umd/popper.min.js"></script>
-<script
-src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/b
-ootstrap.min.js"></script>
+
+    <!-- Barra de navegação superior -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+
+        <!-- Nome da aplicação / logo -->
+        <a class="navbar-brand" href="/">Biblioteca</a>
+
+        <!-- Botão que aparece em telas pequenas para abrir o menu -->
+        <button class="navbar-toggler" 
+                type="button"
+                data-toggle="collapse" 
+                data-target="#navbarNav"
+                aria-controls="navbarNav" 
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+            <!-- Ícone do botão -->
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <!-- Área que contém os itens do menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <!-- Lista de links do menu -->
+            <ul class="navbar-nav">
+
+                <!-- Link para a página inicial -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/">Home</a>
+                </li>
+
+                <!-- Link para a página de livros -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/livros/">Livros</a>
+                </li>
+
+                <!-- Link para a página de reservas -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/reserva/">Reserva</a>
+                </li>
+
+                <!-- Link para a página de cidades -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/cidade/">Cidade</a>
+                </li>
+
+                <!-- Link para a página de autores -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/autor/">Autor</a>
+                </li>
+
+                <!-- Link para a página de editoras -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/editor/">Editora</a>
+                </li>
+
+                <!-- Link para a página de gêneros -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/genero/">Genero</a>
+                </li>
+
+                <!-- Link para a página de leitores -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/leitor/">Leitor</a>
+                </li>
+
+                <!-- Link para acessar o painel administrativo do Django -->
+                <li class="nav-item">
+                    <a class="nav-link text-dark" href="/admin/">Administração</a>
+                </li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- Container principal da página (Bootstrap centraliza e organiza o conteúdo) -->
+    <div class="container mt-5">
+
+        <h2 class="mb-4">Tabela de Editoras</h2>
+        
+        <table class="table">
+        <thead>
+        <tr>
+        <th>Nome</th>
+        <th>Site</th>
+        <th>Cidade</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+        
+        {% for editora in editoras %}
+        <tr>
+        <td>{{ editora.nome }}</td>
+        <td>{{ editora.site }}</td>
+        <td>{{ editora.cidade }}</td>
+        </tr>
+        {% endfor %}
+        
+        </tbody>
+        </table>
+        
+        </div>
+
+
+    <!-- Importa jQuery (necessário para algumas funções do Bootstrap 4) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+    <!-- Importa Popper.js (usado para tooltips e dropdowns do Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+
+    <!-- Importa o JavaScript do Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
